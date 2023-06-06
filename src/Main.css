@@ -1,0 +1,36 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+article {
+    padding: .5vw;
+    width: 19vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+img {
+    width: 250px;
+  }
+
+.favorite {
+    background-color: rgba(25, 150, 21, 0.527);
+}
+
+article > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.click {
+    background-color: rgba(2, 179, 179, 0.616);
+    padding: 3px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    margin: 5px 10px;
+}
