@@ -1,5 +1,7 @@
 import React from 'react';
+import './Main.css'
 import HornedBeast from './HornedBeast';
+import data from './data/data.json';
 
 // Goat picture from rurallivingtoday.com
 // Impala picture from wikipedia
@@ -8,11 +10,11 @@ import HornedBeast from './HornedBeast';
 class Main extends React.Component {
     render() {
         return (
-            <>
-            <HornedBeast title="Deer" description="Deer with moose antlers" image_url="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcS3BUm0m7OZoTynaKvE_nXNKdVrjKSLDtDtby2RFNF7jagoBEyII37ExvVP0fjPDiGTKtHTWOAy1ah56vczOeAaG0c2cixVaGAkvidbBUNV" />
-            <HornedBeast title="Impala" description="A long faced animal with horns almost twice the length of it's face" image_url="https://upload.wikimedia.org/wikipedia/commons/5/53/Male_impala_profile.jpg" />
-            <HornedBeast title="Goat" description="A dopey looking white goat staring at the camera" image_url="https://rurallivingtoday.com/wp-content/uploads/animals-with-horns-1.jpeg" />
-            </>
+            <main>
+                {data.map(animalObj => {
+                    return <HornedBeast name={animalObj.title} title={animalObj.keyword} image_url={animalObj.image_url} description={animalObj.description} horns={animalObj.horns} />
+                })}
+            </main>
         )
     }
 }
