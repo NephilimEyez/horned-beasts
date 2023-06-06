@@ -25,9 +25,9 @@ class HornedBeast extends React.Component {
 
     favHandler = () => {
         if(this.state.fav === true){
-            return <p onClick={this.unFavorite}>💔 Unfavorite me.</p>
+            return <p onClick={this.unFavorite} className='click'>💔 Unfavorite me.</p>
         } else {
-            return <p onClick={this.favorite}>❤️ Favorite me!</p>
+            return <p onClick={this.favorite} className='click'>❤️ Favorite me!</p>
         }
     }
 
@@ -43,7 +43,7 @@ class HornedBeast extends React.Component {
             <article className={this.state.fav ? 'favorite' : ''}>
                 <h2>{this.props.name}</h2>
                 <div>
-                    <p onClick={this.liked}>👍 Like me!</p>
+                    <p className='click' onClick={this.liked}>👍 Like me!</p>
                     {this.favHandler()}
                 </div>
                 <img title={this.props.title} alt={this.props.description} src={this.props.image_url} />

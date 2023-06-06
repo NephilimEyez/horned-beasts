@@ -20,3 +20,11 @@ article > div {
     display: flex;
     justify-content: space-between;
 }
+
+.click {
+    background-color: rgb(2, 179, 179);
+    padding: 3px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
