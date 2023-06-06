@@ -4,6 +4,19 @@ main {
     justify-content: space-evenly;
 }
 
+article {
+    padding: .5vw;
+}
+
 img {
     width: 250px;
   }
+
+.favorite {
+    background-color: rebeccapurple;
+}
+
+article > div {
+    display: flex;
+    justify-content: space-between;
+}
