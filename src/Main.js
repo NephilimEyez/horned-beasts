@@ -1,6 +1,8 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Main.css'
 import HornedBeast from './HornedBeast';
+import Accordion from 'react-bootstrap/Accordion';
 import data from './data/data.json';
 
 // Goat picture from rurallivingtoday.com

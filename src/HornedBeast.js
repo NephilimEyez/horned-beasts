@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Accordion from 'react-bootstrap/Accordion';
 
 
 class HornedBeast extends React.Component {
@@ -48,6 +50,12 @@ class HornedBeast extends React.Component {
                 </div>
                 <img title={this.props.title} alt={this.props.description} src={this.props.image_url} />
                 <p>Liked: {this.state.likes} times</p>
+                <Accordion flush>
+                    <Accordion.Item eventKey="0">
+                        <Accordion.Header>{this.props.title}</Accordion.Header>
+                        <Accordion.Body>{this.props.description}</Accordion.Body>
+                    </Accordion.Item>
+                </Accordion>
             </article>
             </>
         )
