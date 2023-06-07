@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import Modal from 'react-bootstrap/Modal';
+import SelectedBeast from './SelectedBeast';
 import data from './data/data.json';
 
 class App extends React.Component {
@@ -11,14 +11,25 @@ class App extends React.Component {
 
     this.state = {
       showModal: false,
-      modalTitle: ''
+      ...data.map((animalObj) => {
+        return <>
+          key: {animalObj._id} 
+          name: {animalObj.title} 
+          title: {animalObj.keyword} 
+          image_url: {animalObj.image_url} 
+          description: {animalObj.description} 
+          horns: {animalObj.horns}
+        </>
+      })
     }
   }
 
-  handleOpenModal = title => {
+  handleOpenModal = (title, image_url, description) => {
     this.setState({
       showModal: true,
-      modalTitle: title
+      title: title,
+      image_url: image_url,
+      description: description
     });
   }
 
@@ -35,11 +46,13 @@ class App extends React.Component {
       <Main handleOpenModal={this.handleOpenModal}
       data={data}
       />
-      <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Test</Modal.Title>
-        </Modal.Header>
-      </Modal>
+      <SelectedBeast 
+      title={this.state.title}
+      showModal={this.state.showModal}
+      handleCloseModal={this.handleCloseModal}
+      image_url={this.state.image_url}
+      description={this.state.description}
+      />
       <Footer />
       </>
     )
