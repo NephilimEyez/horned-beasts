@@ -39,6 +39,10 @@ class HornedBeast extends React.Component {
         })
     }
 
+    handlePassName = () => {
+        this.props.handleOpenModal(this.props.title)
+    }
+
     render(){
         return (
             <>
@@ -48,7 +52,7 @@ class HornedBeast extends React.Component {
                     <p className='click' onClick={this.liked}>👍 Like me!</p>
                     {this.favHandler()}
                 </div>
-                <img title={this.props.title} alt={this.props.description} src={this.props.image_url} />
+                <img onClick={this.handlePassName} title={this.props.title} alt={this.props.description} src={this.props.image_url} />
                 <p>Liked: {this.state.likes} times</p>
                 <Accordion flush>
                     <Accordion.Item eventKey="0">
