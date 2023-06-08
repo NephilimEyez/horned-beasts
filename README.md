@@ -36,3 +36,26 @@ Finish time: _7:10_
 Actual time needed to complete: _30 Min_
 
 I did not care for bootstrap. I had to make my code a bit more janky to accomedate it in a pleasing manner 
+
+### Wed Lab Time Guess
+
+Number and name of feature: _Display A Modal_
+
+Estimate of time needed to complete: _1.5 Hours_
+
+Start time: _5:30_
+
+Finish time: _6:40_
+
+Actual time needed to complete: _1 Hour 10 Minutes_
+
+
+Number and name of feature: _Stretch Goal_
+
+Estimate of time needed to complete: _2 Hours_
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
