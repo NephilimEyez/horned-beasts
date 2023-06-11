@@ -11,25 +11,16 @@ class App extends React.Component {
 
     this.state = {
       showModal: false,
-      ...data.map((animalObj) => {
-        return <>
-          key: {animalObj._id} 
-          name: {animalObj.title} 
-          title: {animalObj.keyword} 
-          image_url: {animalObj.image_url} 
-          description: {animalObj.description} 
-          horns: {animalObj.horns}
-        </>
-      })
+      sortedData: data,
     }
   }
 
-  handleOpenModal = (title, image_url, description) => {
+  handleOpenModal = (event) => {
     this.setState({
       showModal: true,
-      title: title,
-      image_url: image_url,
-      description: description
+      title: data.filter(element => element.keyword === event.target.title)[0].title,
+      image_url: data.filter(element => element.keyword === event.target.title)[0].image_url,
+      description: data.filter(element => element.keyword === event.target.title)[0].description
     });
   }
 
@@ -39,12 +30,42 @@ class App extends React.Component {
     })
   }
 
+  handleSelect = (event) => {
+    let selected = event.target.value;
+  
+    if(selected === '1'){
+      let newData = data.filter(element => element.horns === 1);
+      this.setState({
+        sortedData: newData
+      })
+    } else if(selected === '2') {
+      let newData = data.filter(element => element.horns === 2);
+      this.setState({
+        sortedData: newData
+      })
+    } else if(selected === '3') {
+      let newData = data.filter(element => element.horns === 3);
+      this.setState({
+        sortedData: newData
+      })
+    } else if(selected === '100') {
+      let newData = data.filter(element => element.horns === 100);
+      this.setState({
+        sortedData: newData
+      })
+    } else if(selected === 'all') {
+      this.setState({
+        sortedData: data
+      })
+    }
+  }
+
   render() {
     return (
       <>
-      <Header />
+      <Header handleSelect={this.handleSelect} />
       <Main handleOpenModal={this.handleOpenModal}
-      data={data}
+      data={this.state.sortedData}
       />
       <SelectedBeast 
       title={this.state.title}

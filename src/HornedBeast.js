@@ -39,8 +39,8 @@ class HornedBeast extends React.Component {
         })
     }
 
-    handlePassName = () => {
-        this.props.handleOpenModal(this.props.name, this.props.image_url, this.props.description)
+    handlePassName = (event) => {
+        this.props.handleOpenModal(event)
     }
 
     render(){
