@@ -1,0 +1,9 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
+select.form-select {
+    width: 22vw;
+}
